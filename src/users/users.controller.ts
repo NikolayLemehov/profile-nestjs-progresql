@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserProfileDto } from './dto/CreateUserProfileDto';
+import { FindByRoleDto } from './dto/FindByRoleDto';
 
 @Controller('users')
 export class UsersController {
@@ -14,5 +15,10 @@ export class UsersController {
   @Get()
   getAll() {
     return this.usersService.getAll();
+  }
+
+  @Get('/role')
+  findByRole(@Body() findByRoleDto: FindByRoleDto) {
+    return this.usersService.findByRole(findByRoleDto);
   }
 }

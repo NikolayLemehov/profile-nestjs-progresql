@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/sequelize';
 import { User } from './users.model';
 import { CreateUserProfileDto } from './dto/CreateUserProfileDto';
 import { Profile } from '../profiles/profiles.model';
+import { FindByRoleDto } from './dto/FindByRoleDto';
 
 @Injectable()
 export class UsersService {
@@ -32,5 +33,13 @@ export class UsersService {
 
   async getAll() {
     return await this.userRepository.findAll({ include: { all: true } });
+  }
+
+  async findByRole(dto: FindByRoleDto) {
+    return await this.userRepository.findAll({
+      where: {
+        role: dto.role,
+      },
+    });
   }
 }
