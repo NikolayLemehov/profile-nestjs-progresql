@@ -1,12 +1,12 @@
 import {
-  BelongsToMany,
+  BelongsTo,
   Column,
   DataType,
+  ForeignKey,
   Model,
   Table,
 } from 'sequelize-typescript';
-// import { Role } from '../roles/roles.model';
-// import { UserRoles } from '../roles/user-roles.model';
+import { Profile } from '../profiles/profiles.model';
 
 interface UserCreationAttrs {
   username: string;
@@ -25,27 +25,26 @@ export class User extends Model<User, UserCreationAttrs> {
   @Column({
     type: DataType.STRING,
     allowNull: false,
+    defaultValue: '',
   })
   username: string;
 
-  // @Column({
-  //   type: DataType.STRING,
-  //   allowNull: false,
-  // })
-  // password: string;
-  //
-  // @Column({
-  //   type: DataType.BOOLEAN,
-  //   defaultValue: false,
-  // })
-  // banned: boolean;
-  //
-  // @Column({
-  //   type: DataType.STRING,
-  //   defaultValue: '',
-  // })
-  // banReason: string;
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  email: string;
 
-  // @BelongsToMany(() => Role, () => UserRoles)
-  // roles: Role[];
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  role: string;
+
+  @ForeignKey(() => Profile)
+  @Column
+  profileId: number;
+
+  @BelongsTo(() => Profile)
+  profile: Profile;
 }
