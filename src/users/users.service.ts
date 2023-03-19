@@ -12,7 +12,7 @@ export class UsersService {
     return user;
   }
 
-  getAll() {
+  async getAll() {
     return 'really getAll'
   }
 }
