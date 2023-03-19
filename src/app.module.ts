@@ -5,6 +5,8 @@ import {SequelizeModule} from "@nestjs/sequelize";
 import {User} from "./users/users.model";
 
 @Module({
+  controllers: [],
+  providers: [],
   imports: [
     UsersModule,
     ConfigModule.forRoot({
