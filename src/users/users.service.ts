@@ -17,7 +17,6 @@ export class UsersService {
 
   async create(dto: CreateUserProfileDto) {
     const { username, email, role, firstName, secondName, state } = dto;
-    console.log({ username, email, role, firstName, secondName, state });
     const userDto: CreateUserDto = {
       username,
       email,
