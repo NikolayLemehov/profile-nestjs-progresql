@@ -7,6 +7,7 @@ import {
   HttpStatus,
   Param,
   Post,
+  Put,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserProfileDto } from './dto/CreateUserProfileDto';
@@ -29,12 +30,12 @@ export class UsersController {
     return this.usersService.getAll();
   }
 
-  @Get('/role')
+  @Post('/role')
   findByRole(@Body() findByRoleDto: FindByRoleDto) {
     return this.usersService.findByRole(findByRoleDto);
   }
 
-  @Post('/update')
+  @Put('/update')
   update(@Body() updateUserProfileDto: UpdateUserProfileDto) {
     return this.usersService.update(updateUserProfileDto);
   }
