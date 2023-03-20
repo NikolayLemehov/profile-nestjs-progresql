@@ -1,10 +1,7 @@
-app = "myApp"
-kill_signal = "SIGINT"
-kill_timeout = 5
-processes = []
+app = "profileuser"
 
 [build]
-image = "nicklemster/profile-user"
+image = "nicklemster/profile-user:latest"
 
-[env]
-VAR="myValue"
+[[services]]
+internal_port = 8080
