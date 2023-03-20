@@ -8,9 +8,9 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('User profile')
-    .setDescription('one-to-one, nest, rest')
+    .setDescription('one-to-one, nestjs')
     .setVersion('1.0.0')
-    // .addTag('asdf')
+    // .addTag('users')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/api/docs', app, document);
