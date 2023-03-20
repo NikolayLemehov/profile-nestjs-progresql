@@ -1,7 +1,0 @@
-app = "profileuser"
-
-[build]
-image = "nicklemster/profile-user:latest"
-
-[[services]]
-internal_port = 8080
