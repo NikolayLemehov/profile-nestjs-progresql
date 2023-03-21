@@ -42,6 +42,7 @@ export class UsersService {
       where: {
         role: dto.role,
       },
+      include: { all: true },
     });
   }
 
