@@ -24,12 +24,12 @@ export class Profile extends Model<Profile, ProfileCreationAttrs> {
   })
   firstName: string;
 
-  @ApiProperty({ example: 'Dou', description: 'User second name' })
+  @ApiProperty({ example: 'Dou', description: 'User last name' })
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  secondName: string;
+  lastName: string;
 
   @ApiProperty({ example: 'mail', description: 'User mail' })
   @Column({

@@ -16,7 +16,7 @@ export class UsersService {
   ) {}
 
   async create(dto: CreateUserProfileDto) {
-    const { username, email, role, firstName, secondName, state } = dto;
+    const { username, email, role, firstName, lastName, state } = dto;
     const userDto: CreateUserDto = {
       username,
       email,
@@ -24,7 +24,7 @@ export class UsersService {
     };
     const profileDto: CreateProfileDto = {
       firstName,
-      secondName,
+      lastName,
       state,
     };
     const user = await this.userRepository.create(userDto);
@@ -46,7 +46,7 @@ export class UsersService {
   }
 
   async update(dto: UpdateUserProfileDto) {
-    const { id, username, email, role, firstName, secondName, state } = dto;
+    const { id, username, email, role, firstName, lastName, state } = dto;
 
     const user = await this.userRepository.findByPk(id);
 
@@ -63,7 +63,7 @@ export class UsersService {
     if (role) user.role = role;
 
     if (firstName) profile.firstName = firstName;
-    if (secondName) profile.secondName = secondName;
+    if (lastName) profile.lastName = lastName;
     if (state) profile.state = state;
 
     await user.save();

@@ -11,8 +11,8 @@ export class UpdateUserProfileDto {
   readonly role?: string;
   @ApiProperty({ example: 'John', description: 'User first name' })
   readonly firstName?: string;
-  @ApiProperty({ example: 'Dou', description: 'User second name' })
-  readonly secondName?: string;
+  @ApiProperty({ example: 'Dou', description: 'User last name' })
+  readonly lastName?: string;
   @ApiProperty({ example: 'mail', description: 'User mail' })
   readonly state?: string;
 }
