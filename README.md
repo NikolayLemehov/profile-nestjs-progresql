@@ -16,4 +16,4 @@ $ docker compose up
 
 ## Links
 
-- [swagger api/docs](http://localhost:5000/api/docs/)
+- [Documentation api/docs](http://localhost:5000/api/docs/)
