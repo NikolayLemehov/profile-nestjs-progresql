@@ -13,3 +13,7 @@ $ docker compose build
 ```bash
 $ docker compose up
 ```
+
+## Links
+
+- [swagger api/docs](http://localhost:5000/api/docs/)
